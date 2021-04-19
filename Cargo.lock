@@ -110,7 +110,7 @@ dependencies = [
  "encoding_rs_io",
  "futures",
  "gfx-backend-dx11",
- "gfx-hal",
+ "gfx-hal 0.7.0",
  "lazy_static",
  "log",
  "msgbox",
@@ -372,6 +372,21 @@ dependencies = [
  "shlex",
  "which",
 ]
+
+[[package]]
+name = "bit-set"
+version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6e11e16035ea35e4e5997b393eacbf6f63983188f7a2ad25bfb13465f5ad59de"
+dependencies = [
+ "bit-vec",
+]
+
+[[package]]
+name = "bit-vec"
+version = "0.6.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "349f9b6a179ed607305526ca489b34ad0a41aed5f7980fa90eb03160b69598fb"
 
 [[package]]
 name = "bitflags"
@@ -1481,7 +1496,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "07cd956b592970f08545b9325b87580eb95a51843b6f39da27b8667fec1a1216"
 dependencies = [
  "fxhash",
- "gfx-hal",
+ "gfx-hal 0.6.0",
  "spirv_cross",
 ]
 
@@ -1494,7 +1509,7 @@ dependencies = [
  "arrayvec",
  "bitflags",
  "gfx-auxil",
- "gfx-hal",
+ "gfx-hal 0.6.0",
  "libloading",
  "log",
  "parking_lot",
@@ -1515,6 +1530,18 @@ checksum = "18d0754f5b7a43915fd7466883b2d1bb0800d7cc4609178d0b27bf143b9e5123"
 dependencies = [
  "bitflags",
  "raw-window-handle",
+]
+
+[[package]]
+name = "gfx-hal"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c1d9cc8d3b573dda62d0baca4f02e0209786e22c562caff001d77c389008781d"
+dependencies = [
+ "bitflags",
+ "naga",
+ "raw-window-handle",
+ "thiserror",
 ]
 
 [[package]]
@@ -2292,6 +2319,20 @@ dependencies = [
  "objc",
  "thiserror",
  "winapi 0.3.9",
+]
+
+[[package]]
+name = "naga"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "05089b2acdf0e6a962cdbf5e328402345a27f59fcde1a59fe97a73e8149d416f"
+dependencies = [
+ "bit-set",
+ "bitflags",
+ "fxhash",
+ "log",
+ "num-traits",
+ "thiserror",
 ]
 
 [[package]]
@@ -3522,9 +3563,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.61"
+version = "1.0.64"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4fceb2595057b6891a4ee808f70054bd2d12f0e97f1cbb78689b59f676df325a"
+checksum = "799e97dc9fdae36a5c8b8f2cae9ce2ee9fdce2058c57a93e6099d919fd982f79"
 dependencies = [
  "itoa",
  "ryu",
@@ -4869,9 +4910,9 @@ dependencies = [
 
 [[package]]
 name = "zip"
-version = "0.5.9"
+version = "0.5.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cc2896475a242c41366941faa27264df2cb935185a92e059a004d0048feb2ac5"
+checksum = "9c83dc9b784d252127720168abd71ea82bf8c3d96b17dc565b5e2a02854f2b27"
 dependencies = [
  "byteorder",
  "bzip2",
